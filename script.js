@@ -66,13 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle Mobile Menu (if added later)
+    // Handle Mobile Menu
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinksList = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-link');
+
     if (menuToggle && navLinksList) {
         menuToggle.addEventListener('click', () => {
             navLinksList.classList.toggle('active');
             menuToggle.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksList.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
         });
     }
 });
