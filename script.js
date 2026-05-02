@@ -1,30 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Cursor Follower
-    const cursor = document.getElementById('cursor');
-    if (cursor) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-    }
-
-    // Hover effect for links
-    const interactiveElements = document.querySelectorAll('a, button, .skill-tag, .btn');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            if (cursor) {
-                cursor.style.transform = 'scale(2.5)';
-                cursor.style.backgroundColor = 'rgba(99, 102, 241, 0.3)';
-            }
-        });
-        el.addEventListener('mouseleave', () => {
-            if (cursor) {
-                cursor.style.transform = 'scale(1)';
-                cursor.style.backgroundColor = 'var(--primary)';
-            }
-        });
-    });
-
     // Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
